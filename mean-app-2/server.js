@@ -42,3 +42,6 @@ app.use('/api', apiRouter);
 
 app.listen(port);
 console.log('The money is in port ' + port);
+
+// connect to our database (mongolab)
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds043982.mongolab.com:43982/mean-app');
