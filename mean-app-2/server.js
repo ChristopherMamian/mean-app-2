@@ -45,3 +45,20 @@ console.log('The money is in port ' + port);
 
 // connect to our database (mongolab)
 mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds043982.mongolab.com:43982/mean-app');
+
+var User = require('./app/models/user');
+
+var apiRouter = express.Router();
+
+// middleware for all requests
+apiRouter.use(function(req, res, next) {
+	console.log('user has landed');
+
+	next();
+});
+
+apiRouter.get('/', function(req, res) {
+	res.json({ message: 'you just hit the api!'});
+});
+
+app.use('/api', apiRouter);
