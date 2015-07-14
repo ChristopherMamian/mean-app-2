@@ -87,4 +87,14 @@ apiRouter.route('/users')
 		});
 	})
 
+	// get all the users (accessed at GET http://localhost:8080/api/users)
+	.get(function(req, res) {
+		User.find(function(err, users) {
+			if (err) res.send(err);
+
+			// return the users
+			res.json(users);
+		})
+	})
+
 app.use('/api', apiRouter);
