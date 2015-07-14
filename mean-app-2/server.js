@@ -97,4 +97,17 @@ apiRouter.route('/users')
 		})
 	})
 
+	// on routes that end in /users/:user_id
+apiRouter.route('users/:user_id')
+
+	// get the user with that id
+	.get(function(req, res) {
+		User.findById(req.params.user_id, function(err, user) {
+			if (err) res.send(err)
+
+				// return that user
+			res.json(user);
+		});
+	})
+
 app.use('/api', apiRouter);
