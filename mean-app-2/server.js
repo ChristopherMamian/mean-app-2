@@ -44,7 +44,7 @@ app.listen(port);
 console.log('The money is in port ' + port);
 
 // connect to our database (mongolab)
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds043982.mongolab.com:43982/mean-app');
+// mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds043982.mongolab.com:43982/mean-app');
 
 var User = require('./app/models/user');
 
@@ -128,9 +128,9 @@ apiRouter.route('users/:user_id')
 				if (err) res.send(err);
 
 				// return a message
-				res.json){ message: 'User updated'});
+				res.json({ message: 'User updated'});
 			});
-		});
+		});1
 
 	// delete user with this id
 	.delete(function(req, res) {
